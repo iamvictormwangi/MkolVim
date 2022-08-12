@@ -1,0 +1,22 @@
+{
+  "html": {
+    "snippets": {
+      "meta:x": "<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">",
+      "meta:v": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "meta:r": "<meta http-equiv=\"refresh\" content=\"30\">",
+      "meta:t": "<meta name=\"theme\" content=\"${1}\" >",
+      "meta:a": "<meta name=\"author\" content=\"${1}\" >",
+      "meta:d": "<meta name=\"description\" content=\"${1}\" >",
+      "meta:k": "<meta name=\"keywords\" content=\"${1}\" >",
+      "img": "<img class=\"img\" src=\"${1}\" loading=\"lazy\" alt=\"img\"></img>",
+      "video": "<video class=\"video\" src=\"${1}\" loading=\"lazy\" alt=\"video\"></video>"
+    }
+  },
+  "css": {
+    "snippets": {
+      "cb": "color: black",
+      "bsd": "border: 1px solid ${1:red}",
+      "ls": "list-style: ${1}"
+    }
+  }
+}

@@ -80,16 +80,14 @@ api.nvim_set_keymap(
 api.nvim_set_keymap(
   'n',
   '<leader>e',
-  '<cmd>NvimTreeToggle<Enter>',
+  '<cmd>NeoTreeShowToggle<Enter>',
   { noremap = true }
 )
 
--- Reload File Tree
-
 api.nvim_set_keymap(
   'n',
-  '<leader>r',
-  ':NvimTreeRefresh<Enter>',
+  '<leader>t',
+  '<cmd>lua require("FTerm").toggle()<CR>',
   { noremap = true }
 )
 

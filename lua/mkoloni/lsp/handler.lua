@@ -18,7 +18,7 @@ lspconfig.util.default_config = vim.tbl_deep_extend(
   lsp_defaults
 )
 
-lspconfig.jedi_language_server.setup({
+lspconfig.pylsp.setup({
   single_file_support = true,
   on_attach = function(client, bufnr)
     lspconfig.util.default_config.on_attach(client, bufnr)
@@ -29,9 +29,10 @@ lspconfig.jedi_language_server.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    -- require "lsp_signature".on_attach()
   end
 })
+
+
 
 require 'lspconfig'.sumneko_lua.setup({
   settings = {
@@ -64,7 +65,6 @@ require 'lspconfig'.sumneko_lua.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    require "lsp_signature".on_attach()
   end
 })
 
@@ -79,7 +79,6 @@ lspconfig.clangd.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    require "lsp_signature".on_attach()
   end
 })
 
@@ -94,7 +93,6 @@ lspconfig.tsserver.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    require "lsp_signature".on_attach()
   end
 })
 
@@ -109,7 +107,6 @@ lspconfig.html.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    require "lsp_signature".on_attach()
   end
 })
 
@@ -124,7 +121,6 @@ lspconfig.cssls.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    -- require "lsp_signature".on_attach()
   end
 })
 
@@ -139,7 +135,6 @@ lspconfig.cssmodules_ls.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    -- require "lsp_signature".on_attach()
   end
 })
 
@@ -154,6 +149,5 @@ lspconfig.jsonls.setup({
     vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
     require "lsp-format".on_attach(client)
-    -- require "lsp_signature".on_attach()
   end
 })
