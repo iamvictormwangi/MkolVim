@@ -1,0 +1,1 @@
+require("mkoloni.colors.tokyonight")
