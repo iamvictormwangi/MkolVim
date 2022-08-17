@@ -62,6 +62,9 @@ au BufWinEnter * silent! loadview
 cmd [[set clipboard+=unnamedplus]]
 
 
+-- save currently buffer whenever i am switching buffers
+ cmd [[ set autowriteall ]]
+
 -- Disable anoyying swap files
 
 vim.cmd [[set noswapfile]]

@@ -248,7 +248,7 @@ return require('packer').startup(function(use)
       -- in the form "LspDiagnosticsSignWarning"
 
       require("neo-tree").setup({
-        close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+        close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
         enable_git_status = true,
         enable_diagnostics = true,
@@ -315,13 +315,13 @@ return require('packer').startup(function(use)
         },
         window = {
           position = "right",
-          width = 20,
+          width = 45,
           mapping_options = {
             noremap = true,
             nowait = true,
           },
           mappings = {
-            ["<space>"] = {
+              ["<tab>"] = {
                 "toggle_node",
                 nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
             },
@@ -441,6 +441,10 @@ return require('packer').startup(function(use)
       vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
   }
+
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+  require("toggleterm").setup()
+end}
 
   use "lukas-reineke/indent-blankline.nvim"
   use "tpope/vim-surround"
