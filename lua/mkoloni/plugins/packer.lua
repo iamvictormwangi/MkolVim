@@ -48,6 +48,10 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-path"
   use "KadoBOT/cmp-plugins"
   use {
+    "uga-rosa/cmp-dictionary",
+    ft = {'markdown'}
+  }
+  use {
     "L3MON4D3/LuaSnip",
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
@@ -443,8 +447,8 @@ return require('packer').startup(function(use)
   }
 
   use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-  require("toggleterm").setup()
-end}
+    require("toggleterm").setup()
+  end}
 
   use "lukas-reineke/indent-blankline.nvim"
   use "tpope/vim-surround"
@@ -573,5 +577,32 @@ end}
   }
 
   use "mkoloni/vim-repeat"
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
+    config = function()
+      require("nvim-tree").setup({
+        sort_by = "case_sensitive",
+        view = {
+          adaptive_size = true,
+        mappings = {
+        list = {
+          { key = "u", action = "dir_up" },
+        },
+        },
+      },
+      renderer = {
+        group_empty = true,
+      },
+      filters = {
+        dotfiles = true,
+        },
+      })
+    end
+  }
 
 end)

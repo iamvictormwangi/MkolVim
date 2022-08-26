@@ -30,6 +30,7 @@ cmp.setup {
         luasnip = '⋗',
         buffer = 'Ω',
         path = '🖫',
+        dictionary = '🖫',
       }),
     })
   },
@@ -73,6 +74,7 @@ cmp.setup {
     { name = "buffer", keyword_length = 2 },
     { name = "path", keyword_length = 2 },
     { name = 'plugins', keyword_length = 2 },
+    { name = 'dictionary', keyword_length = 1 },
   },
   window = {
     documentation = cmp.config.window.bordered()
