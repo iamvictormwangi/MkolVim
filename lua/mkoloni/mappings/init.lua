@@ -80,7 +80,7 @@ api.nvim_set_keymap(
 api.nvim_set_keymap(
   'n',
   '<leader>e',
-  '<cmd>NeoTreeShowToggle<Enter>',
+  '<cmd>NvimTreeToggle<Enter>',
   { noremap = true }
 )
 

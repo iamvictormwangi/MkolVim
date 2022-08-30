@@ -219,16 +219,9 @@ return require('packer').startup(function(use)
   use "airblade/vim-gitgutter"
   use "preservim/tagbar"
   use "dstein64/vim-startuptime"
-  use {
-    "mattn/emmet-vim",
-    config = function()
-      vim.cm([[
-        let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/snippets_custom.json')), "\n"))
-      ]])
-    end
-  }
-  use "mattn/webapi-vim"
+  use "mattn/emmet-vim"
 
+  use "mattn/webapi-vim"
 
   use "preservim/nerdcommenter"
 
