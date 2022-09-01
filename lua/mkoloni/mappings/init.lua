@@ -15,6 +15,15 @@ api.nvim_set_keymap(
   { noremap = true }
 )
 
+-- Yank also with t key
+
+api.nvim_set_keymap(
+  'n',
+  't',
+  'y',
+  { noremap = true }
+)
+
 -- Indenting Keys
 
 api.nvim_set_keymap(
