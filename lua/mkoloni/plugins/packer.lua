@@ -323,12 +323,13 @@ return require('packer').startup(function(use)
 
   use "mkoloni/better-escape.vim"
 
-  use {
-    "mkoloni/cmp-bootstrap.nvim",
-    ft = { 'html', 'css', 'tsx', 'jsx', 'js', 'ts' },
-  }
-
   use "mkoloni/vim-repeat"
+
+  use {
+    "mkoloni/cmp_limpio",
+    after = "nvim-cmp",
+    event = "InsertEnter"
+   }
 
   use {
     'kyazdani42/nvim-tree.lua',

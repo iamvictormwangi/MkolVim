@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -39,7 +42,6 @@ local function save_profiles(threshold)
     end
   end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -102,14 +104,6 @@ _G.packer_plugins = {
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/close-buffers.vim",
     url = "https://github.com/Asheq/close-buffers.vim"
   },
-  ["cmp-bootstrap.nvim"] = {
-    after_files = { "/home/mzing/.local/share/nvim/site/pack/packer/opt/cmp-bootstrap.nvim/after/plugin/cmp_bootstrap.lua" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/mzing/.local/share/nvim/site/pack/packer/opt/cmp-bootstrap.nvim",
-    url = "https://github.com/mkoloni/cmp-bootstrap.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -143,6 +137,15 @@ _G.packer_plugins = {
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/cmp-plugins",
     url = "https://github.com/KadoBOT/cmp-plugins"
   },
+  cmp_limpio = {
+    after_files = { "/home/mzing/.local/share/nvim/site/pack/packer/opt/cmp_limpio/after/plugin/cmp_limpio.lua" },
+    load_after = {},
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mzing/.local/share/nvim/site/pack/packer/opt/cmp_limpio",
+    url = "https://github.com/mkoloni/cmp_limpio"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -155,7 +158,6 @@ _G.packer_plugins = {
     url = "https://github.com/ziontee113/color-picker.nvim"
   },
   ["emmet-vim"] = {
-    config = { "\27LJ\2\2�\1\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0�\1        let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/snippets.json')), \"\\n\"))\n      \bcmd\bvim\0" },
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
@@ -398,10 +400,6 @@ time([[Config for lsp-format.nvim]], false)
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
--- Config for: emmet-vim
-time([[Config for emmet-vim]], true)
-try_loadstring("\27LJ\2\2�\1\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0�\1        let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/snippets/snippets.json')), \"\\n\"))\n      \bcmd\bvim\0", "config", "emmet-vim")
-time([[Config for emmet-vim]], false)
 -- Config for: nvim-web-devicons
 time([[Config for nvim-web-devicons]], true)
 try_loadstring("\27LJ\2\2�\b\0\0\4\0>\0A6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1<\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\0025\3\16\0=\3\17\0025\3\18\0=\3\19\0025\3\20\0=\3\21\0025\3\22\0=\3\23\0025\3\24\0=\3\25\0025\3\26\0=\3\27\0025\3\28\0=\3\29\0025\3\30\0=\3\31\0025\3 \0=\3!\0025\3\"\0=\3#\0025\3$\0=\3%\0025\3&\0=\3'\0025\3(\0=\3)\0025\3*\0=\3+\0025\3,\0=\3-\0025\3.\0=\3/\0025\0030\0=\0031\0025\0032\0=\0033\0025\0034\0=\0035\0025\0036\0=\0037\0025\0038\0=\0039\0025\3:\0=\3;\2=\2=\1B\0\2\1K\0\1\0\roverride\1\0\0\blua\1\0\2\tname\blua\ticon\t \brpm\1\0\2\tname\brpm\ticon\t \bdeb\1\0\2\tname\bdeb\ticon\t \axz\1\0\2\tname\axz\ticon\t \bzip\1\0\2\tname\bzip\ticon\t \tlock\1\0\2\tname\tlock\ticon\t \ttoml\1\0\2\tname\ttoml\ticon\t \apy\1\0\2\tname\apy\ticon\t \bvue\1\0\2\tname\bvue\ticon\t﵂ \arb\1\0\2\tname\arb\ticon\t \15Dockerfile\1\0\2\tname\15Dockerfile\ticon\t \bout\1\0\2\tname\bout\ticon\t \bmp4\1\0\2\tname\bmp4\ticon\t \bmp3\1\0\2\tname\bmp3\ticon\t \tjpeg\1\0\2\tname\tjpeg\ticon\t \bjpg\1\0\2\tname\bjpg\ticon\t \bpng\1\0\2\tname\bpng\ticon\t \akt\1\0\2\tname\akt\ticon\n󱈙 \ats\1\0\2\tname\ats\ticon\tﯤ \ajs\1\0\2\tname\ajs\ticon\t \bcss\1\0\2\tname\bcss\ticon\t \6h\1\0\2\tname\6c\ticon\t \6c\1\0\2\tname\6c\ticon\t \tfish\1\0\2\tname\tfish\ticon\t \bzsh\1\0\2\tname\bzsh\ticon\t \amd\1\0\2\tname\amd\ticon\t \ash\1\0\2\tname\ash\ticon\t \thtml\1\0\0\1\0\2\tname\thtml\ticon\t \nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
@@ -438,19 +436,28 @@ time([[Config for null-ls.nvim]], false)
 time([[Config for LuaSnip]], true)
 try_loadstring("\27LJ\2\2M\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0", "config", "LuaSnip")
 time([[Config for LuaSnip]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-cmp ]]
+time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType html ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "css" }, _G.packer_plugins)]]
-vim.cmd [[au FileType ts ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "ts" }, _G.packer_plugins)]]
-vim.cmd [[au FileType js ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "js" }, _G.packer_plugins)]]
-vim.cmd [[au FileType jsx ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "jsx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'cmp-dictionary'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tsx ++once lua require("packer.load")({'cmp-bootstrap.nvim'}, { ft = "tsx" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp_limpio'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)

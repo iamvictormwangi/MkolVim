@@ -69,6 +69,9 @@ cmd [[set clipboard+=unnamedplus]]
 
 vim.cmd [[set noswapfile]]
 
+-- Disable syntax highlighting for large files
+vim.cmd [[ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif ]]
+
 require("mkoloni.mappings")
 require("mkoloni.settings")
 require("mkoloni.statusline")

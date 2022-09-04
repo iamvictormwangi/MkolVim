@@ -25,7 +25,7 @@ cmp.setup {
       mode = 'symbol', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       menu = ({
-        cmp_bootstrap = "[﯄]",
+        cmp_limpio = "[﯄]",
         nvim_lsp = 'λ',
         luasnip = '⋗',
         buffer = 'Ω',
@@ -68,7 +68,7 @@ cmp.setup {
   }),
   sources = {
     { name = 'luasnip' },
-    { name = 'cmp_bootstrap', keyword_length = 1 },
+    { name = 'cmp_limpio', keyword_length = 1 },
     { name = 'nvim_lsp', keyword_length = 2 },
     { name = 'nvim_lua', keyword_length = 2 },
     { name = "buffer", keyword_length = 2 },
