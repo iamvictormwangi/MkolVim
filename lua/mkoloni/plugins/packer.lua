@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
 
   use "neovim/nvim-lspconfig"
 
+  use "tomasr/molokai"
+
   use {
     "williamboman/nvim-lsp-installer",
     config = function()
@@ -65,22 +67,24 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require('nvim-treesitter.configs').setup {
-       ensure_installed = { "c", "lua", "rust" },
-        sync_install = false,
-        auto_install = true,
-        ignore_install = { "javascript" },
-        highlight = {
-          enable = true,
-          disable = { "c", "rust" },
-          additional_vim_regex_highlighting = false,
-        },
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_file_lines = nil,
-        }
-      }
+
+      --[[require('nvim-treesitter.configs').setup {]]
+       --[[ensure_installed = { "c", "lua", "rust" },]]
+        --[[sync_install = false,]]
+        --[[auto_install = true,]]
+        --[[ignore_install = { "javascript" },]]
+        --[[highlight = {]]
+          --[[enable = true,]]
+          --[[disable = { "c", "rust" },]]
+          --[[additional_vim_regex_highlighting = false,]]
+        --[[},]]
+        --[[rainbow = {]]
+          --[[enable = true,]]
+          --[[extended_mode = true,]]
+          --[[max_file_lines = nil,]]
+        --[[}]]
+      --[[}]]
+
     end
   }
 
@@ -327,8 +331,7 @@ return require('packer').startup(function(use)
 
   use {
     "mkoloni/cmp_limpio",
-    after = "nvim-cmp",
-    event = "InsertEnter"
+    ft = { 'html', 'css', 'tsx', 'jsx', 'js', 'ts' }
    }
 
   use {
