@@ -46,3 +46,8 @@ o.lazyredraw = true
 o.wrap = true
 o.cmdheight = 0
 o.ls = 0
+
+vim.cmd([[
+set winbar=%f
+
+]])
