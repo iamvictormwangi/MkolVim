@@ -96,7 +96,7 @@ api.nvim_set_keymap(
 api.nvim_set_keymap(
   'n',
   '<leader>t',
-  '<cmd>lua require("FTerm").toggle()<CR>',
+  '<cmd>ToggleTerm<CR>',
   { noremap = true }
 )
 
