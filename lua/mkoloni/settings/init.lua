@@ -50,4 +50,6 @@ o.ls = 0
 vim.cmd([[
 set winbar=%f
 
+set spell
+
 ]])
