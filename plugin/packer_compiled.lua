@@ -86,15 +86,10 @@ _G.packer_plugins = {
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["Vim-Jinja2-Syntax"] = {
-    loaded = true,
-    path = "/home/mzing/.local/share/nvim/site/pack/packer/start/Vim-Jinja2-Syntax",
-    url = "https://github.com/Glench/Vim-Jinja2-Syntax"
-  },
   ["better-escape.vim"] = {
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/better-escape.vim",
-    url = "https://github.com/mkoloni/better-escape.vim"
+    url = "https://github.com/vicktter/better-escape.vim"
   },
   ["bufferline.nvim"] = {
     config = { "\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0" },
@@ -146,7 +141,7 @@ _G.packer_plugins = {
     needs_bufread = false,
     only_cond = false,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/opt/cmp_limpio",
-    url = "https://github.com/mkoloni/cmp_limpio"
+    url = "https://github.com/vicktter/cmp_limpio"
   },
   cmp_luasnip = {
     loaded = true,
@@ -274,7 +269,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\2\v\0\0\1\0\0\0\1K\0\1\0\0" },
+    config = { "\27LJ\2\2ê\1\0\2\a\0\a\1\21*\2\0\0006\3\0\0006\4\1\0009\4\2\0049\4\3\0046\5\1\0009\5\4\0059\5\5\5\18\6\1\0B\5\2\0A\3\1\3\15\0\3\0X\5\aÄ\15\0\4\0X\5\5Ä9\5\6\4\1\2\5\0X\5\2Ä+\5\2\0L\5\2\0K\0\1\0\tsize\22nvim_buf_get_name\bapi\ffs_stat\tloop\bvim\npcallÄ¿\fƒ\2\1\0\4\0\15\0\0196\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\0015\2\6\0=\2\a\0015\2\b\0005\3\t\0=\3\n\0023\3\v\0=\3\n\2=\2\f\0015\2\r\0=\2\14\1B\0\2\1K\0\1\0\frainbow\1\0\2\18extended_mode\2\venable\2\14highlight\0\fdisable\1\3\0\0\6c\trust\1\0\2&additional_vim_regex_highlighting\1\venable\2\19ignore_install\1\2\0\0\15javascript\21ensure_installed\1\0\2\17auto_install\2\17sync_install\1\1\4\0\0\6c\blua\trust\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -345,7 +340,7 @@ _G.packer_plugins = {
   ["vim-repeat"] = {
     loaded = true,
     path = "/home/mzing/.local/share/nvim/site/pack/packer/start/vim-repeat",
-    url = "https://github.com/mkoloni/vim-repeat"
+    url = "https://github.com/vicktter/vim-repeat"
   },
   ["vim-startuptime"] = {
     loaded = true,
@@ -371,10 +366,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\2\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+try_loadstring("\27LJ\2\2M\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0", "config", "LuaSnip")
+time([[Config for LuaSnip]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
@@ -439,10 +434,10 @@ time([[Config for nvim-lsp-installer]], false)
 time([[Config for null-ls.nvim]], true)
 try_loadstring("\27LJ\2\2ﬂ\1\0\0\5\0\f\0\0306\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\n\0004\2\4\0006\3\0\0'\4\1\0B\3\2\0029\3\3\0039\3\4\0039\3\5\3>\3\1\0026\3\0\0'\4\1\0B\3\2\0029\3\3\0039\3\6\0039\3\a\3>\3\2\0026\3\0\0'\4\1\0B\3\2\0029\3\3\0039\3\b\0039\3\t\3>\3\3\2=\2\v\1B\0\2\1K\0\1\0\fsources\1\0\0\nspell\15completion\veslint\16diagnostics\vstylua\15formatting\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-try_loadstring("\27LJ\2\2M\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0", "config", "LuaSnip")
-time([[Config for LuaSnip]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\2ê\1\0\2\a\0\a\1\21*\2\0\0006\3\0\0006\4\1\0009\4\2\0049\4\3\0046\5\1\0009\5\4\0059\5\5\5\18\6\1\0B\5\2\0A\3\1\3\15\0\3\0X\5\aÄ\15\0\4\0X\5\5Ä9\5\6\4\1\2\5\0X\5\2Ä+\5\2\0L\5\2\0K\0\1\0\tsize\22nvim_buf_get_name\bapi\ffs_stat\tloop\bvim\npcallÄ¿\fƒ\2\1\0\4\0\15\0\0196\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\0015\2\6\0=\2\a\0015\2\b\0005\3\t\0=\3\n\0023\3\v\0=\3\n\2=\2\f\0015\2\r\0=\2\14\1B\0\2\1K\0\1\0\frainbow\1\0\2\18extended_mode\2\venable\2\14highlight\0\fdisable\1\3\0\0\6c\trust\1\0\2&additional_vim_regex_highlighting\1\venable\2\19ignore_install\1\2\0\0\15javascript\21ensure_installed\1\0\2\17auto_install\2\17sync_install\1\1\4\0\0\6c\blua\trust\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
