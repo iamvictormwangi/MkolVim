@@ -89,9 +89,20 @@ api.nvim_set_keymap(
 api.nvim_set_keymap(
   'n',
   '<leader>e',
+  '<cmd>NvimTreeToggle<Enter>',
+  { noremap = true }
+)
+
+-- Open Fuzzy Finder
+
+api.nvim_set_keymap(
+  'n',
+  '<leader>f',
   '<cmd>FZF<Enter>',
   { noremap = true }
 )
+
+-- Open ToggleTerm
 
 api.nvim_set_keymap(
   'n',
