@@ -89,7 +89,7 @@ api.nvim_set_keymap(
 api.nvim_set_keymap(
   'n',
   '<leader>e',
-  '<cmd>NvimTreeToggle<Enter>',
+  '<cmd>FZF<Enter>',
   { noremap = true }
 )
 
