@@ -1,4 +1,4 @@
--- Load core file
+-- MkolVim
 
 require("mkoloni.core")
 
