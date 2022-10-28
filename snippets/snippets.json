@@ -9,7 +9,20 @@
       "meta:d": "<meta name=\"description\" content=\"${1}\" >",
       "meta:k": "<meta name=\"keywords\" content=\"${1}\" >",
       "img": "<img class=\"img\" src=\"${1}\" loading=\"lazy\" alt=\"img\"></img>",
-      "video": "<video class=\"video\" src=\"${1}\" loading=\"lazy\" alt=\"video\"></video>"
+      "label": "<label class=\"label\">${1}</label",
+      "form": "<form class=\"form\" method=\"POST\">\n\t<label class=\"label\">${1}</label>\n\t<input class=\"input\" type=\"text\" name=\"input\"></input>\n</form>",
+      "input": "<input class=\"input\" name=\"input\" type=\"text\"></input>",
+      "video": "<video class=\"video\" src=\"${1}\" loading=\"lazy\" alt=\"video\"></video>",
+      "hero": "<hero class=\"hero\"></hero>",
+      "panel": "<div class=\"panel\"><div class=\"panel-wrapper\">${1}</div></div>",
+      "badge": "<div class=\"badge\"><div class=\"badge-wrapper\">${1}</div></div>",
+      "box": "<div class=\"box\"><div class=\"box-wrapper\">${1}</div></div>",
+      "carousel": "<div class=\"carousel\">\n\t<div class=\"carousel-wrapper\">${1}</div>\n</div>",
+      "dropdown": "<div class=\"dropdown\">\n\t<div class=\"dropdown-wrapper\">${1}</div>\n</div>",
+      "msg": "<div class=\"msg\">\n\t<div class=\"msg-wrapper\">${1}</div>\n</div>",
+      "modal": "<div class=\"modal\">\n\t<div class=\"modal-wrapper\">${1}</div>\n</div>",
+      "hamberger": "<div class=\"hamberger\">\n\t<div class=\"hamberger-bar\">${1}</div>\n\t<div class=\"hamberger-bar hamberger-bar-short\">${1}</div>\n\t<div class=\"hamberger-bar\">${1}</div>\n</div>",
+      "notepad": "<div class=\"notepad\"><h3 class=\"notepad-title\">${1}</h3></div>"
     }
   },
   "css": {
