@@ -25,12 +25,12 @@ cmp.setup {
       mode = 'symbol', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       menu = ({
-        cmp_limpio = "[﯄]",
+        cmp_limpio = "[ℒ]",
         nvim_lsp = 'λ',
         luasnip = '⋗',
-        buffer = 'Ω',
-        path = '🖫',
-        dictionary = '🖫',
+        buffer = '﬘',
+        path = '',
+        dictionary = '﬜',
       }),
     })
   },
