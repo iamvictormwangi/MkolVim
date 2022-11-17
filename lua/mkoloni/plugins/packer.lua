@@ -396,7 +396,7 @@ return require('packer').startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
   use {"goolord/alpha-nvim", config = function()
-    require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    require'alpha'.setup(require'alpha.themes.startify'.config)
   end}
 
   use {
@@ -432,7 +432,13 @@ return require('packer').startup(function(use)
     end
   }
 
-
+  use "preservim/vim-pencil"
+  use {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      require('vscode').setup {}
+    end
+  }
 
   use {
     'stevearc/dressing.nvim',
