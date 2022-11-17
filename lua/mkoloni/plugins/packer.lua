@@ -247,6 +247,7 @@ return require('packer').startup(function(use)
   end}
 
   use "lukas-reineke/indent-blankline.nvim"
+
   use "tpope/vim-surround"
   use "Asheq/close-buffers.vim"
   use "folke/trouble.nvim"
@@ -393,6 +394,45 @@ return require('packer').startup(function(use)
   }
 
   use { "ellisonleao/gruvbox.nvim" }
+
+  use {"goolord/alpha-nvim", config = function()
+    require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  end}
+
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
+
+  use{ 'anuvyklack/pretty-fold.nvim',
+   config = function()
+      require('pretty-fold').setup()
+   end
+  }
+
+  use {
+  "folke/zen-mode.nvim",
+  config = function()
+    require("zen-mode").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+  }
+
+  use {
+  "folke/twilight.nvim",
+  config = function()
+    require("twilight").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+    end
+  }
+
+
 
   use {
     'stevearc/dressing.nvim',

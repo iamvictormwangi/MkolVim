@@ -23,7 +23,7 @@
       "footer": "<div class=\"footer\">\n\t<div class=\"footer-wrapper\">${1}</div>\n</div>",
       "group": "<ul class=\"group\">\n\t<li class=\"group-item\">${1}</li>\n\t<li class=\"group-item\">${1}</li>\n</ul>",
       "hamberger": "<div class=\"hamberger\">\n\t<div class=\"hamberger-bar\"></div>\n\t<div class=\"hamberger-bar hamberger-bar-short\"></div>\n\t<div class=\"hamberger-bar\"></div>\n</div>",
-      "hero": "<div class=\"hero\"></div>",
+      "hero": "<div class=\"hero\">${1}</div>",
       "list": "<ul class=\"list\">\n\t<li class=\"list-item\">${1}</li>\n\t<li class=\"list-item\">${2}</li>\n</ul>",
       "msg": "<div class=\"msg\">\n\t<div class=\"msg-wrapper\">${1}</div>\n</div>",
       "modal": "<div class=\"modal\">\n\t<div class=\"modal-wrapper\">${1}</div>\n</div>",
