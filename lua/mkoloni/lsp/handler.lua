@@ -175,6 +175,36 @@ lspconfig.clangd.setup({
   end
 })
 
+lspconfig.volar.setup({
+  single_file_support = true,
+  on_attach = function(client, bufnr)
+    lspconfig.util.default_config.on_attach(client, bufnr)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
+    vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
+    vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
+    require "lsp-format".on_attach(client)
+  end
+})
+
+
+lspconfig.rust_analyzer.setup({
+  single_file_support = true,
+  on_attach = function(client, bufnr)
+    lspconfig.util.default_config.on_attach(client, bufnr)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
+    vim.keymap.set("n", "ge", vim.diagnostic.goto_next, { buffer = 0 })
+    vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = 0 })
+    require "lsp-format".on_attach(client)
+  end
+})
+
+
 
 lspconfig.gopls.setup({
   single_file_support = true,
